@@ -1,0 +1,7 @@
+{
+  "name": "crisishelper",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
