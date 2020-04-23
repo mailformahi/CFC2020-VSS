@@ -1,0 +1,26 @@
+<ion-app>
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <ion-title size="small">
+          Choose the product you want to contribute!
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content [fullscreen]="true">
+      <div>
+      <form #form="ngForm">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item *ngFor="let product of products; let i = index; let colorIndex = index">
+            <ion-checkbox [(ngModel)]="product.isChecked" name="'product'+i" [color]="colors[colorIndex%colors.length]" slot="start"></ion-checkbox>
+            <ion-label>{{product.val}}</ion-label>
+          </ion-item>
+        </ion-list>
+
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!form.dirty" (click)="processProductForm()"> Save</ion-button>
+        </div>
+     </form>
+    </div>
+    </ion-content>
+    </ion-app>

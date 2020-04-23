@@ -1,0 +1,27 @@
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title size="small">
+        Please select orphanage(s) you want to help.
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <div #map id="map"></div>
+    <div>
+    <form #form="ngForm">
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        <ion-item *ngFor="let orphan of orphange; let i = index; let colorIndex = index">
+          <ion-checkbox [(ngModel)]="orphan.isChecked" name="'orphan'+i" [title]="orphan.name+' ('+orphan.address+')'" [color]="colors[colorIndex%colors.length]" slot="start"></ion-checkbox>
+          <ion-label>{{orphan.name}} ({{orphan.address}})</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <div class="ion-padding">
+        <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!form.dirty" (click)="processOrphanageForm()"> Submit</ion-button>
+      </div>
+   </form>
+  </div>
+  </ion-content>
+  </ion-app>

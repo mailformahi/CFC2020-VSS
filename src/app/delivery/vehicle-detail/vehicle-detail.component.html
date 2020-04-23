@@ -1,0 +1,45 @@
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Provide Your address details
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <form #form="ngForm" (ngSubmit)="processVehicleForm(form)">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+            <ion-item>
+              <ion-label position="stacked">Vehicle Information (brand, type, color) <ion-text color="danger">*</ion-text></ion-label>
+              <ion-textarea name ="vehicleInfo" [(ngModel)]="vehicleInfo" required></ion-textarea>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label position="stacked">Vehicle Registration # <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input name ="vehicleRegNo" [(ngModel)]="vehicleRegNo" required type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <!-- <ion-label position="stacked">Your Proof(Goverment Approved)</ion-label>
+                <ion-select [(ngModel)]="proofType" name="proofType" required> -->
+                <ion-label position="stacked">Your Proof(Goverment Approved)</ion-label>
+                <ion-select [(ngModel)]="proofType" name="proofType" required interface="popover">
+                  <ion-select-option value="Voter">Voter ID</ion-select-option>
+                  <ion-select-option value="Aadhar">Aadhar Card</ion-select-option>
+                  <ion-select-option value="License">License</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">{{proofType=="Voter"?"Voter ID":proofType=="Aadhar"?"Aadhar Card#":proofType=="License"?"License#":"Proof #"}}<ion-text color="danger">*</ion-text></ion-label>
+              <ion-input name ="proofInfo" [(ngModel)]="proofInfo" required type="text"></ion-input>
+            </ion-item>
+        </ion-list>
+
+          <div class="ion-padding">
+            <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!form.valid">Save</ion-button>
+          </div>
+    </form>
+
+  </ion-content>
+  </ion-app>

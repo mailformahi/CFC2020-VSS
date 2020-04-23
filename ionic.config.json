@@ -1,7 +1,8 @@
 {
   "name": "crisishelper",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

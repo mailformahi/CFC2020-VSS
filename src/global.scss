@@ -24,3 +24,13 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-app.ios {
+    font-family: TradeGothic !important;
+    font-size: 15px;
+}
+
+ion-app.android {
+    font-family: TradeGothic !important;
+    font-size: 15px;
+}

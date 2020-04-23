@@ -1,0 +1,33 @@
+<ion-app>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title size="small">
+      Contribution Type
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+  <form #form="ngForm">
+      <ion-list>
+          <ion-radio-group [(ngModel)]="selectedOption" name="contributionType" (ngModelChange)="doNavigate()">
+            <ion-list-header>
+              <ion-label>How would you like to help the society? </ion-label>
+            </ion-list-header>
+            <ion-item>
+              <ion-label>Contributor</ion-label>
+              <ion-radio slot="start" color="success" value="contributor"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>Delivery Partner</ion-label>
+              <ion-radio slot="start" color="secondary" value="delivery"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+       
+  </form>
+</div>
+</ion-content>
+</ion-app>

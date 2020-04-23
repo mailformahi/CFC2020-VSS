@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Eethal Foundation",
+        "address": "RS Puram, Coimbatore",
+        "isChecked": false
+    },
+    {
+        "name": "Anbu Karam",
+        "address": "Saravanampatti, Coimbatore",
+        "isChecked": false
+    },
+    {
+        "name": "Avvai Illam",
+        "address": "Gandhi Puram, Coimbatore",
+        "isChecked": false
+    },
+    {
+        "name": "Agaram Foundation",
+        "address": "Thadagam, Coimbatore",
+        "isChecked": false
+    }
+]

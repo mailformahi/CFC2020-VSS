@@ -1,0 +1,62 @@
+<ion-app>
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <ion-title size="small">
+          Provide Your address details
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content [fullscreen]="true">
+      <form #form="ngForm"(ngSubmit)="processAddressForm(form)" >
+          <ion-list lines="full" class="ion-no-margin ion-no-padding">
+              <ion-item>
+                <ion-label position="stacked">Title</ion-label>
+                <ion-select name="honorific" [(ngModel)]="honorific" interface="popover">
+                  <ion-select-option value="Mr">Mr</ion-select-option>
+                  <ion-select-option value="Miss">Miss</ion-select-option>
+                  <ion-select-option value="Mrs">Mrs</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+                <ion-input name ="firstName" [(ngModel)]="firstName" required type="text"></ion-input>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+                <ion-input name ="lastName" [(ngModel)]="lastName" required type="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label position="stacked">Gender<ion-text color="danger">*</ion-text></ion-label>
+                  <ion-select [(ngModel)]="gender" name="gender" interface="popover" required>
+                    <ion-select-option value="Male">Male</ion-select-option>
+                    <ion-select-option value="Female">Female</ion-select-option>
+                    <ion-select-option value="Other">Other</ion-select-option>
+                  </ion-select>
+                </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Address <ion-text color="danger">*</ion-text></ion-label>
+                <ion-input name ="address1" [(ngModel)]="address1" required placeholder="Address Line 1"></ion-input>
+                <ion-input name ="address2" [(ngModel)]="address2" placeholder="Address Line 2"></ion-input>
+                <ion-input name ="city" [(ngModel)]="city" required placeholder="City"></ion-input>
+                <ion-input name ="state" [(ngModel)]="state" required placeholder="State"></ion-input>
+                <ion-input type="number" name ="postalCode" [(ngModel)]="postalCode" required placeholder="Zip Code" (keypress)="numberOnlyValidation($event)"></ion-input>
+              </ion-item>
+
+<!--          <ion-item>
+                <ion-label position="stacked">Notes</ion-label>
+                <ion-textarea></ion-textarea>
+              </ion-item> -->
+            </ion-list>
+
+            <div class="ion-padding">
+              <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!form.valid">Save</ion-button>
+            </div>
+      </form>
+    
+    </ion-content>
+    </ion-app>

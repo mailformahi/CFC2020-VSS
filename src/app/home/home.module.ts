@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { ActivityComponent } from './activity/activity.component';
+import { OtpaccessComponent } from './otpaccess/otpaccess.component';
 
 @NgModule({
   imports: [
@@ -12,12 +14,11 @@ import { HomePage } from './home.page';
     FormsModule,
     IonicModule,
     RouterModule.forChild([
-      {
-        path: '',
-        component: HomePage
-      }
+      // { path: '', pathMatch: 'full', component: HomePage },
+      { path: '', component: OtpaccessComponent },
+      { path: 'activity', component: ActivityComponent },
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, ActivityComponent, OtpaccessComponent]
 })
 export class HomePageModule {}

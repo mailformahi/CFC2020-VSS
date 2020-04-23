@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Login
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+ 
+  <ion-content [fullscreen]="true">
+    <form #form="ngForm">
+      <!-- <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Blank</ion-title>
+        </ion-toolbar>
+      </ion-header> -->
+  
+      <div id="container">
+        
+          <ion-item>
+              <!-- <ion-label position="stacked">select country code <ion-text color="danger">*</ion-text></ion-label> -->
+            <ion-select name="ccode" [(ngModel)]="cCode" placeholder="Country code" interface="popover" required>
+              <ion-select-option value="+91">India</ion-select-option>
+              <ion-select-option value="+1">USA</ion-select-option>
+            </ion-select>
+            <ion-input
+              type="tel"
+              placeholder="Enter 10 digit mobile #"
+              name="phone"
+              [(ngModel)]="phone"
+              value="{{ phone }}"
+              minlength="10"
+              maxlength="10"
+              required
+              (keypress)="numberOnlyValidation($event)"></ion-input>
+          </ion-item>
+        </div>
+        
+        <div class="ion-padding">
+          <ion-button *ngIf="!displayOtpSection" class="ion-no-margin" (click)="processForm()" [disabled]="!form.valid">Send OTP</ion-button>
+          <ion-button *ngIf="displayOtpSection" class="ion-no-margin" (click)="processForm()">Re-send OTP</ion-button>
+        </div>
+        <div *ngIf="displayOtpSection">
+          <div>
+            <ion-item>
+              <ion-input
+                placeholder="Enter the OTP"
+                name="otp"
+                minlength="4"
+                maxlength="4"
+                required
+                [(ngModel)]="otp" (keypress)="numberOnlyValidation($event)"></ion-input>
+            </ion-item>
+          </div>
+          <div class="ion-padding">
+            <ion-button class="ion-no-margin" (click)="validateOTP()" [disabled]="!form.valid">Validate</ion-button>
+          </div>
+        </div>
+      
+      
+    </form>
+  </ion-content>
