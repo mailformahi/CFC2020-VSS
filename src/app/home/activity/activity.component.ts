@@ -21,9 +21,10 @@ export class ActivityComponent implements OnInit {
 
   ngOnInit() {}
 
-  doNavigate(){
-    localStorage.setItem("cType",this.selectedOption);
-    this.route.navigate([this.selectedOption=="delivery"?"delivery/address":"contribute/address"]);
+  doNavigate(type){
+    localStorage.setItem("cType",type);
+    this.route.navigate([type=="delivery"?"delivery/address":"contribute/address"]);
   }
+  
 
 }

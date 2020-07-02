@@ -1,4 +1,5 @@
-<ion-header [translucent]="true">
+<ion-app>
+<ion-header translucent>
     <ion-toolbar>
       <ion-title>
         Login
@@ -6,7 +7,8 @@
     </ion-toolbar>
   </ion-header>
  
-  <ion-content [fullscreen]="true">
+  <ion-content [fullscreen]="true" transparent>
+  <div class="bgstyle">
     <form #form="ngForm">
       <!-- <ion-header collapse="condense">
         <ion-toolbar>
@@ -31,13 +33,14 @@
               minlength="10"
               maxlength="10"
               required
-              (keypress)="numberOnlyValidation($event)"></ion-input>
+              (keypress)="numberOnlyValidation($event)"
+              clearInput></ion-input>
           </ion-item>
         </div>
         
         <div class="ion-padding">
-          <ion-button *ngIf="!displayOtpSection" class="ion-no-margin" (click)="processForm()" [disabled]="!form.valid">Send OTP</ion-button>
-          <ion-button *ngIf="displayOtpSection" class="ion-no-margin" (click)="processForm()">Re-send OTP</ion-button>
+          <ion-button *ngIf="!displayOtpSection" color="warning" class="ion-no-margin" (click)="processForm()" [disabled]="!form.valid">Send OTP</ion-button>
+          <ion-button *ngIf="displayOtpSection" color="warning" class="ion-no-margin" (click)="processForm()">Re-send OTP</ion-button>
         </div>
         <div *ngIf="displayOtpSection">
           <div>
@@ -52,10 +55,12 @@
             </ion-item>
           </div>
           <div class="ion-padding">
-            <ion-button class="ion-no-margin" (click)="validateOTP()" [disabled]="!form.valid">Validate</ion-button>
+            <ion-button class="ion-no-margin" color="warning" (click)="validateOTP()" [disabled]="!form.valid">Validate</ion-button>
           </div>
         </div>
       
       
     </form>
+  </div>
   </ion-content>
+</ion-app>

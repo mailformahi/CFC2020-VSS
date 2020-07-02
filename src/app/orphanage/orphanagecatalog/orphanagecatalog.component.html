@@ -1,15 +1,21 @@
 <ion-app>
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-title size="small">
-        Please select orphanage(s) you want to help.
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-header>  
+      <ion-toolbar color="primary">  
+        <ion-buttons slot="start">  
+        <ion-menu-button color="dark"></ion-menu-button>   
+        </ion-buttons>  
+        <ion-title size="medium">  
+            Select orphanage(s) would you like to help.
+        </ion-title> 
+        <ion-buttons slot="end">
+          <ion-back-button defaultHref=“home”></ion-back-button>
+        </ion-buttons>  
+      </ion-toolbar>   
+    </ion-header>
   
   <ion-content [fullscreen]="true">
     <div #map id="map"></div>
-    <div>
+    <div class="bgstyle">
     <form #form="ngForm">
       <ion-list lines="full" class="ion-no-margin ion-no-padding">
         <ion-item *ngFor="let orphan of orphange; let i = index; let colorIndex = index">

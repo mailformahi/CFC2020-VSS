@@ -1,30 +1,42 @@
 <ion-app>
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title size="small">
-      Contribution Type
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <div>
+    <ion-header>  
+        <ion-toolbar color="primary">  
+         <ion-buttons slot="start">  
+         <ion-menu-button color="dark"></ion-menu-button>   
+         </ion-buttons>  
+         <ion-title size="medium">  
+            Ways of Help
+         </ion-title>
+         <ion-buttons slot="end">
+         <ion-back-button defaultHref=“home”></ion-back-button>
+        </ion-buttons> 
+        </ion-toolbar>   
+      </ion-header>
+  
+<ion-content>
+  <div class="bgstyle">
   <form #form="ngForm">
       <ion-list>
-          <ion-radio-group [(ngModel)]="selectedOption" name="contributionType" (ngModelChange)="doNavigate()">
-            <ion-list-header>
-              <ion-label>How would you like to help the society? </ion-label>
-            </ion-list-header>
-            <ion-item>
-              <ion-label>Contributor</ion-label>
-              <ion-radio slot="start" color="success" value="contributor"></ion-radio>
+            <ion-item button (click)="doNavigate('contributor')">
+              <ion-thumbnail slot="start">
+                <img src="../../../assets/image/contribute.png">
+              </ion-thumbnail>
+              <ion-label>
+                <h3>To be a Contributor</h3>
+                <p>Helps to provide the things</p>
+              </ion-label>
             </ion-item>
-  
-            <ion-item>
-              <ion-label>Delivery Partner</ion-label>
-              <ion-radio slot="start" color="secondary" value="delivery"></ion-radio>
-            </ion-item>
-          </ion-radio-group>
+          
+            <ion-item button (click)="doNavigate('delivery')">
+                <ion-thumbnail slot="start">
+                  <img src="../../../assets/image/delivery.png">
+                </ion-thumbnail>
+                <ion-label>
+                  <h3>To be a Delivery Partner</h3>
+                  <p>Helps to distribute the things</p>
+                </ion-label>
+              </ion-item>
+
         </ion-list>
        
   </form>

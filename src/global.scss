@@ -34,3 +34,25 @@ ion-app.android {
     font-family: TradeGothic !important;
     font-size: 15px;
 }
+html body {
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.bgstyle {
+    background: url(assets/image/pendamic2.png);
+    background-size: 100%;
+    background-repeat: no-repeat!important;
+    background-color: transparent;
+    // background-size: cover!important;
+    width: 105vw!important;
+    height: 100vh!important;
+    // margin-left: -10%!important;
+    background-attachment: fixed!important;
+    // margin-top: -10%!important;
+    background-position: center center!important;
+    opacity: 0.8;
+  }
+
+  ion-input, ion-select {
+    opacity: 0.9;
+  }
