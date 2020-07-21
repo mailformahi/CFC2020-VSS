@@ -1,32 +1,41 @@
-<ion-app>
-    <ion-header>  
-      <ion-toolbar color="primary">  
-        <ion-buttons slot="start">  
-        <ion-menu-button color="dark"></ion-menu-button>   
-        </ion-buttons>  
-        <ion-title size="medium">  
-            Choose the product you want to contribute..
-        </ion-title>
-        <ion-buttons slot="end">
-          <ion-back-button defaultHref=“home”></ion-back-button>
-        </ion-buttons>  
-      </ion-toolbar>   
-    </ion-header>
-    
-    <ion-content [fullscreen]="true">
-      <div class="bgstyle">
-      <form #form="ngForm">
-        <ion-list lines="full" class="ion-no-margin ion-no-padding">
-          <ion-item *ngFor="let product of products; let i = index; let colorIndex = index">
-            <ion-checkbox [(ngModel)]="product.isChecked" name="'product'+i" [color]="colors[colorIndex%colors.length]" slot="start"></ion-checkbox>
-            <ion-label>{{product.val}}</ion-label>
-          </ion-item>
-        </ion-list>
 
-        <div class="ion-padding">
-          <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!form.dirty" (click)="processProductForm()"> Save</ion-button>
-        </div>
-     </form>
-    </div>
-    </ion-content>
-    </ion-app>
+<ion-header>  
+  <ion-toolbar color="primary">  
+    <ion-buttons slot="start">  
+    <ion-menu-button color="dark"></ion-menu-button>   
+    </ion-buttons>  
+    <ion-title size="medium">  
+        Choose the product you want to contribute..
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref=“home”></ion-back-button>
+    </ion-buttons>  
+  </ion-toolbar>   
+</ion-header>
+
+<ion-content>
+  <div class="bgstyle">
+  <form #form="ngForm">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item *ngFor="let product of products; let i = index; let colorIndex = index">
+        <ion-checkbox [(ngModel)]="product.isChecked" name="'product'+i" [color]="colors[colorIndex%colors.length]" slot="start"></ion-checkbox>
+        <ion-label>{{product.val}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+  </form>
+</div>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+      <ion-row>
+        <ion-col style="text-align: right">
+          <ion-button float-right [color]="!form.valid?'warning':'success'" (click)="processProductForm()" [disabled]="!form.valid">
+            <ion-icon slot="start" name=""></ion-icon>
+            Next
+            <ion-icon slot="end" name=""></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-footer>

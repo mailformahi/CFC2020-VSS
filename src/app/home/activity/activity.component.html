@@ -1,17 +1,16 @@
-<ion-app>
-    <ion-header>  
-        <ion-toolbar color="primary">  
-         <ion-buttons slot="start">  
-         <ion-menu-button color="dark"></ion-menu-button>   
-         </ion-buttons>  
-         <ion-title size="medium">  
-            Ways of Help
-         </ion-title>
-         <ion-buttons slot="end">
-         <ion-back-button defaultHref=“home”></ion-back-button>
-        </ion-buttons> 
-        </ion-toolbar>   
-      </ion-header>
+<ion-header>  
+  <ion-toolbar color="secondary">  
+    <ion-buttons slot="start">  
+      <ion-menu-button color="dark"></ion-menu-button>   
+    </ion-buttons>  
+    <ion-title size="samll">  
+      Ways of Help
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button size="large" (click)="gotoChatbot()"><ion-icon name="chatbubbles"></ion-icon></ion-button>
+    </ion-buttons> 
+  </ion-toolbar>   
+</ion-header>
   
 <ion-content>
   <div class="bgstyle">
@@ -36,10 +35,8 @@
                   <p>Helps to distribute the things</p>
                 </ion-label>
               </ion-item>
-
         </ion-list>
        
   </form>
 </div>
 </ion-content>
-</ion-app>

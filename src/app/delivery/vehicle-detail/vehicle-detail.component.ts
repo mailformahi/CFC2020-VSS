@@ -24,10 +24,11 @@ export class VehicleDetailComponent implements OnInit {
     console.log(form.value);
     this.vehicle = form.value;
     localStorage.setItem("vehicleInfo",JSON.stringify(this.vehicle));
-    var helperDetails = {"Type": localStorage.getItem("cType"), "helperDetail":[
+    var helperDetails = {"Type": localStorage.getItem("cType"), 
+    "phone": localStorage.getItem("phone"),
+    "helperDetail":[
       {"vehicleInfo": localStorage.getItem("vehicleInfo")},
-      {"personal": localStorage.getItem("personal")},
-      {"phone": localStorage.getItem("phone")}
+      {"personal": localStorage.getItem("personal")}
     ]}
     // var helperDetails = {"helperDetail":[
     //   {"vehicleInfo": localStorage.getItem("vehicleInfo")},

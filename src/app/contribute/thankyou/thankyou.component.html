@@ -1,34 +1,32 @@
-<ion-app>
-    <ion-header>  
-        <ion-toolbar color="primary">  
-          <ion-buttons slot="start">  
-          <ion-menu-button color="dark"></ion-menu-button>   
-          </ion-buttons>  
-          <ion-title>  
-              Thank You.. !!
-          </ion-title>  
-        </ion-toolbar>   
-      </ion-header>
+<ion-header>  
+  <ion-toolbar color="primary">  
+    <ion-buttons slot="start">  
+      <ion-menu-button color="dark"></ion-menu-button>   
+    </ion-buttons>  
+    <ion-title>  
+        Thank You.. !!
+    </ion-title>  
+  </ion-toolbar>   
+</ion-header>
     
-    <ion-content [fullscreen]="true">
-      <div class="bgstyle">
-          <ion-item>
-            <h4>Delivery partner will contact you to collect the item(s).</h4>
-          </ion-item>
-          <ion-item>
-              Do you want to contribute to nearby orphanage?
-          </ion-item>
-          <ion-radio-group [(ngModel)]="selectedOption" name="contributionType"  (ngModelChange)="doNavigate()">
-            <ion-item>
-              <ion-label>Yes</ion-label>
-              <ion-radio slot="start" color="success" value="Yes"></ion-radio>
-            </ion-item>
+<ion-content>
+  <div class="bgstyle">
+    <ion-item>
+      <h4>Delivery partner will contact you to collect the item(s).</h4>
+    </ion-item>
+    <ion-item>
+        Do you want to contribute to nearby orphanage?
+    </ion-item>
+    <ion-radio-group [(ngModel)]="selectedOption" name="contributionType"  (ngModelChange)="doNavigate()">
+      <ion-item>
+        <ion-label>Yes</ion-label>
+        <ion-radio slot="start" color="success" value="Yes"></ion-radio>
+      </ion-item>
 
-            <ion-item>
-              <ion-label>No</ion-label>
-              <ion-radio slot="start" color="danger" value="No"></ion-radio>
-            </ion-item>
-        </ion-radio-group>
-        </div>
-      </ion-content>
-      </ion-app>
+      <ion-item>
+        <ion-label>No</ion-label>
+        <ion-radio slot="start" color="danger" value="No"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </div>
+</ion-content>      

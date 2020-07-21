@@ -43,10 +43,11 @@ export class ProductsComponent implements OnInit {
     console.log(selectedValues);
     localStorage.setItem("items",JSON.stringify(selectedValues));
 
-    var helperDetails = {"Type": localStorage.getItem("cType"), "helperDetail":[
+    var helperDetails = {"type": localStorage.getItem("cType"), 
+    "phone": localStorage.getItem("phone"),
+    "helperDetail":[
       {"items": localStorage.getItem("items")},
-      {"personal": localStorage.getItem("personal")},
-      {"phone": localStorage.getItem("phone")}
+      {"personal": localStorage.getItem("personal")}
     ]}
     // var helperDetails = {"helperDetail":[
     //     {"items": localStorage.getItem("items")},

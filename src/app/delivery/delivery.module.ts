@@ -9,6 +9,7 @@ import { DeliveryPageRoutingModule } from './delivery-routing.module';
 import { DeliveryPage } from './delivery.page';
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import { PickupsComponent } from './pickups/pickups.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     IonicModule,
     DeliveryPageRoutingModule
   ],
-  declarations: [DeliveryPage, VehicleDetailComponent, ThankyouComponent]
+  declarations: [DeliveryPage, VehicleDetailComponent, PickupsComponent, ThankyouComponent]
 })
 export class DeliveryPageModule {}

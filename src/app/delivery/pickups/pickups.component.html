@@ -1,0 +1,24 @@
+<ion-header>  
+  <ion-toolbar color="primary">  
+    <ion-buttons slot="start">  
+    <ion-menu-button color="dark"></ion-menu-button>   
+    </ion-buttons>  
+    <ion-title size="medium">  
+        Enter your vehicle information
+    </ion-title>  
+  </ion-toolbar>   
+</ion-header>
+
+<ion-content>
+  <div class="bgstyle">
+    <form #form="ngForm">
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        
+      </ion-list>
+
+      <div class="ion-padding">
+        <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!form.valid">Save</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

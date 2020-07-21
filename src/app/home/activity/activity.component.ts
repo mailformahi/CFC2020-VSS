@@ -25,6 +25,8 @@ export class ActivityComponent implements OnInit {
     localStorage.setItem("cType",type);
     this.route.navigate([type=="delivery"?"delivery/address":"contribute/address"]);
   }
-  
+  gotoChatbot(){
+    this.route.navigate(["chatbot/dochat"]);
+  }
 
 }

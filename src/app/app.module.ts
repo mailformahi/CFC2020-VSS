@@ -16,9 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {Geolocation} from '@ionic-native/geolocation/ngx'
 
 import {} from 'googlemaps';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 @NgModule({
-  declarations: [AppComponent, AddressDetailComponent],
+  declarations: [AppComponent, AddressDetailComponent, ChatbotComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpClientModule],
   providers: [

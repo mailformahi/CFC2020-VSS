@@ -1,0 +1,36 @@
+<ion-header>  
+  <ion-toolbar color="primary">  
+    <ion-buttons slot="start">  
+    <ion-menu-button color="dark"></ion-menu-button>   
+    </ion-buttons>  
+    <ion-title  size="medium">  
+      Chatbot
+    </ion-title> 
+    <ion-buttons slot="end">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons> 
+  </ion-toolbar>   
+</ion-header>
+<ion-content (keypress)="eventHandler($event)">
+    <ion-list>
+      <div class="ScrollStyle maindiv" #scrollMe [scrollTop]="scrollMe.scrollHeight" (keypress)="eventHandler($event)">
+        <div *ngFor="let msg of messageList; index as i" (keypress)="eventHandler($event)">
+          <!-- <label *ngIf="messageList.length==0" style="background-color: 'rgb(211, 252, 149)'">{{message}}</label> -->
+          <div class="msg"><label [className]="(msg.userType=='robot' || i==0)?'robo div-left':'user div-right'"> {{msg.message}} </label></div>
+        </div>
+      </div>
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input #msginput id="msginput" type="text" name="msg" [(ngModel)]='message' placeholder='Type your query here..' (keypress)="eventHandler($event)"></ion-input>
+              <ion-button item-right size='small' class="btn btn-primary" type="button" (click)="sendMsg()"><ion-icon name="send"></ion-icon></ion-button>
+              <ion-button item-right size='small' class="btn btn-success" aria-placeholder="click here to start listening.." (click)="startButton($event)"><ion-icon name="mic"></ion-icon></ion-button>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-footer>
