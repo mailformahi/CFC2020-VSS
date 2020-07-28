@@ -19,11 +19,13 @@ IBM Components
 	Watson BOT
 	Language Translator
 	Push Alerts
-	DB2
 
 Featured Components
 	Mobile App on Ionic and Cordova
 	Vahan Seva Service API on Rest
+	MongoDB
+	NodeJS
+	Angular
 
 Steps -
 Sequence of steps mentioned in the sequence diagram in the above pdf document.
